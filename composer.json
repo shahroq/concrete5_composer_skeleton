@@ -1,0 +1,31 @@
+{
+    "name": "my/project",
+    "description": "My project description",
+    "type": "project",
+    "license": "proprietary",
+    "prefer-stable": true,
+    "require": {
+        "composer/installers": "^1.7",
+        "concrete5/core": "^8.5",
+        "concrete5/dependency-patches": "^1.5.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/concrete": ["type:concrete5-core"],
+            "web/application/themes/{$name}": ["type:concrete5-theme"],
+            "web/packages/{$name}": ["type:concrete5-package"],
+            "web/application/blocks/{$name}": ["type:concrete5-block"]
+        },
+        "allow-subpatches": [
+            "concrete5/dependency-patches"
+        ]
+    },
+    "config": {
+        "classmap-authoritative": true,
+        "platform": {
+            "php": "7.0.33"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
